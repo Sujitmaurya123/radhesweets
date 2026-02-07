@@ -28,7 +28,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="menu" className="hover:text-red-700 transition">
+            <Link href="sweets" className="hover:text-red-700 transition">
               Sweets
             </Link>
           </li>
@@ -83,22 +83,22 @@ export default function Navbar() {
         <div className="md:hidden bg-white shadow-lg">
           <ul className="flex flex-col gap-4 px-6 py-6 font-medium text-gray-700">
             <li>
-              <Link onClick={() => setMenuOpen(false)} href="#home">
+              <Link onClick={() => setMenuOpen(false)} href="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link onClick={() => setMenuOpen(false)} href="#about">
+              <Link onClick={() => setMenuOpen(false)} href="/about">
                 About
               </Link>
             </li>
             <li>
-              <Link onClick={() => setMenuOpen(false)} href="#menu">
+              <Link onClick={() => setMenuOpen(false)} href="/sweets">
                 Sweets
               </Link>
             </li>
             <li>
-              <Link onClick={() => setMenuOpen(false)} href="#contact">
+              <Link onClick={() => setMenuOpen(false)} href="/contact">
                 Contact
               </Link>
             </li>

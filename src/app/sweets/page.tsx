@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ShoppingCart, Flame } from "lucide-react";
+import Link from "next/link";
 interface MenuItem {
   name: string;
   price: string;
@@ -56,7 +57,7 @@ export default function Menu() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-            Our <span className="text-red-700">Menu</span>
+            Our <span className="text-red-700">Sweets</span>
           </h1>
           <p className="mt-4 text-lg text-gray-700">
             Freshly prepared sweets using traditional recipes & pure desi ghee.
@@ -111,7 +112,8 @@ function MenuCard({ item }: { item:MenuItem}) {
 
         <button className="mt-5 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-orange-500 text-white py-3 rounded-full font-bold hover:scale-105 transition">
           <ShoppingCart className="w-5 h-5" />
-          Order Now
+       <Link href="/contact"> Order Now
+       </Link>  
         </button>
       </div>
     </div>

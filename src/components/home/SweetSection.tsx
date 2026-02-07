@@ -1,4 +1,6 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const sweets = [
   {
@@ -73,13 +75,22 @@ export default function SweetsSection() {
                 </p>
 
                 <button className="mt-5 px-5 py-2 rounded-full bg-red-500 text-brown-900 font-semibold hover:bg-yellow-400 transition">
-                  Order Now
+               <Link href="/contact">Order Now
+               </Link>   
                 </button>
               </div>
             </div>
           ))}
         </div>
-
+<div className="mt-9 text-center">
+  <Link
+    href="/sweets"
+    className="inline-flex items-center gap-2 text-red-700 font-semibold hover:text-red-800 transition"
+  >
+    See Full Sweets
+    <ArrowRight className="w-4 h-4" />
+  </Link>
+</div>
       </div>
     </section>
   );

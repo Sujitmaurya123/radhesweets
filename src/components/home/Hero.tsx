@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Star, Leaf, Calendar, Truck } from "lucide-react";
 import { Hand } from "lucide-react";
+import Link from "next/link";
 
 
 export default function Hero() {
@@ -74,15 +75,19 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <button className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-red-600 to-orange-500 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center">
+            <Link href="/contact">
               <span className="relative z-10">Order Sweets Now</span>
               <div className="absolute right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
                 →
               </div>
+            </Link>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             
             <button className="px-8 py-4 rounded-full bg-white text-red-700 font-bold text-lg border-2 border-amber-300 hover:border-amber-400 hover:bg-amber-50 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center">
+             <Link href="/sweets">
               <span>Explore Our Menu</span>
+             </Link>
             </button>
           </div>
           

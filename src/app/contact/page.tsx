@@ -1,6 +1,13 @@
 "use client";
 
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+} from "lucide-react";
 
 export default function Contact() {
   return (
@@ -13,7 +20,7 @@ export default function Contact() {
             Contact <span className="text-red-700">Us</span>
           </h1>
           <p className="mt-4 text-lg text-gray-700">
-            Have a question or want to place an order?  
+            Have a question or want to place an order?
             We’re just a call or message away.
           </p>
         </div>
@@ -27,25 +34,30 @@ export default function Contact() {
             <InfoCard
               icon={<Phone />}
               title="Call Us"
-              value="+91 98765 43210"
+              value="+918009165622"
+              href="tel:+918009165622"
             />
 
             <InfoCard
               icon={<MessageCircle />}
               title="WhatsApp Orders"
               value="+91 98765 43210"
+              href="https://wa.me/918009165622"
             />
 
             <InfoCard
               icon={<Mail />}
               title="Email"
               value="radhesweethouse@gmail.com"
+              href="mailto:radhesweethouse@gmail.com"
             />
 
             <InfoCard
               icon={<MapPin />}
               title="Our Location"
-              value="Main Market Road, Your City, India"
+              value="Kalwari, Robertsganj, Uttar Pradesh & Rajgarh, Mirzapur, Uttar Pradesh "
+              
+              href="https://www.google.com/maps/search/?api=1&query=Main+Market+Road+Your+City"
             />
 
             <InfoCard
@@ -54,78 +66,61 @@ export default function Contact() {
               value="Mon – Sun: 8:00 AM – 10:00 PM"
             />
 
+            {/* Trust line */}
             <p className="text-gray-700 pt-4">
-              🚚 <strong>Same-day delivery</strong> available for most orders.  
-              🎉 Bulk & festival orders accepted.
+              🚚 <strong>Same-day delivery</strong> available for most orders
+              <br />
+              🎉 Bulk & festival orders accepted
             </p>
           </div>
 
-          {/* RIGHT – CONTACT FORM */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg border">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Send Us a Message
+          {/* RIGHT – QUICK ACTION CTA */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg border flex flex-col justify-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Order Sweets Instantly
             </h2>
 
-            <form className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-              </div>
+            <p className="text-gray-700 mb-6">
+              For faster service, call or WhatsApp us directly.
+              Our team will help you with menu, pricing, and delivery.
+            </p>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  placeholder="Your mobile number"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Your message or order details"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-red-600 to-orange-500 text-white font-bold py-4 rounded-full shadow-lg hover:scale-105 transition"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="tel:+918009165622"
+                className="text-center px-6 py-4 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-bold shadow hover:scale-105 transition"
               >
-                Send Message
-              </button>
-            </form>
+                📞 Call Now
+              </Link>
+
+              <Link
+                href="https://wa.me/918009165622"
+                target="_blank"
+                className="text-center px-6 py-4 rounded-full bg-green-800 text-white font-bold shadow hover:scale-105 transition"
+              >
+                💬 WhatsApp Order
+              </Link>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
 
-/* Info Card */
-function InfoCard({
-  icon,
-  title,
-  value,
-}: {
+/* ================= INFO CARD ================= */
+
+interface InfoCardProps {
   icon: React.ReactNode;
   title: string;
   value: string;
-}) {
-  return (
-    <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border">
+  href?: string;
+}
+
+function InfoCard({ icon, title, value, href }: InfoCardProps) {
+  const content = (
+    <>
       <div className="p-3 bg-amber-100 rounded-lg text-red-700">
         {icon}
       </div>
@@ -133,6 +128,27 @@ function InfoCard({
         <p className="font-semibold text-gray-900">{title}</p>
         <p className="text-gray-600">{value}</p>
       </div>
+    </>
+  );
+
+  // ✅ If link exists → render Link
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border
+                   hover:shadow-md hover:border-amber-300 transition"
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  // ✅ Otherwise → render normal div
+  return (
+    <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border">
+      {content}
     </div>
   );
 }
+

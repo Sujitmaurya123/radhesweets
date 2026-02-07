@@ -33,7 +33,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/menu" className="hover:text-yellow-400 transition">
+              <Link href="/sweets" className="hover:text-yellow-400 transition">
                 Our Sweets
               </Link>
             </li>
@@ -63,13 +63,15 @@ export default function Footer() {
             Contact Us
           </h3>
           <ul className="space-y-3 text-gray-300 text-sm">
-            <li>📍 Main Market, Your City</li>
-            <li>📞 +91 98765 43210</li>
+            <li>📍 Kalwari, Robertsganj, Uttar Pradesh</li>
+            <li>📍 Rajgarh, Mirzapur, Uttar Pradesh</li>
+            <li>📞 +91 8009165622</li>
             <li>📧 radhe@sweethouse.com</li>
           </ul>
 
           <Link
-            href="#order"
+            href="https://wa.me/918009165622"
+                target="_blank"
             className="inline-block mt-5 px-5 py-2 rounded-full bg-red-700 text-white font-semibold hover:bg-red-800 transition"
           >
             Order on WhatsApp
