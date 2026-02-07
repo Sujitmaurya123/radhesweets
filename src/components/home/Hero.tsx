@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Star, Leaf, Calendar, Truck } from "lucide-react";
-import { Hand, Flame } from "lucide-react";
+import { Hand } from "lucide-react";
 
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
           <div className="mb-6 inline-flex items-center space-x-2 bg-gradient-to-r from-red-50 to-orange-50 px-4 py-2 rounded-full border border-red-100">
             <Hand className="text-red-600" />
             <span className="text-sm font-bold tracking-wider text-red-700 uppercase">
-              Handcrafted Tradition Since 1995
+              Handcrafted Tradition 
             </span>
           </div>
 
@@ -88,6 +88,12 @@ export default function Hero() {
           
           {/* Trust indicators */}
           <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div>
+                        <p className="mt-3 text-sm text-gray-600">
+            🚚 Delivering happiness across the city • 🎁 Perfect for festivals & gifting
+          </p>
+
+            </div>
             <div className="flex items-center">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -98,8 +104,9 @@ export default function Hero() {
             </div>
             <div className="h-4 w-px bg-gray-300"></div>
             <div className="text-gray-700">
-              <span className="font-bold text-red-700">5,000+</span> Happy Customers
+              <span className="font-bold text-red-700">1,000+</span> Happy Customers
             </div>
+            
           </div>
         </div>
 
@@ -108,7 +115,7 @@ export default function Hero() {
           {/* Main image container */}
           <div className="relative w-[320px] h-[320px] md:w-[480px] md:h-[480px] rounded-[3rem] overflow-hidden shadow-2xl shadow-amber-200/50 border-8 border-white">
             <Image
-              src="/images/hq720.jpg"
+              src="/images/sweet1.jpg"
               alt="Assortment of traditional Indian sweets like ladoo, barfi, and jalebi"
               fill
               className="object-cover hover:scale-110 transition duration-700"
@@ -120,18 +127,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-amber-900/20 via-transparent to-transparent"></div>
           </div>
 
-          {/* Floating decorative elements */}
-          <div className="absolute -top-6 -right-6 md:-right-12 bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-4 rounded-2xl shadow-2xl transform rotate-3">
-            <div className="flex items-center space-x-2">
-              <div className="p-1 bg-white/30 rounded-full">
-                <Star className="text-white" />
-              </div>
-              <div>
-                <div className="text-sm font-bold">Since 1995</div>
-                <div className="text-xs">Family Tradition</div>
-              </div>
-            </div>
-          </div>
+          
 
           <div className="absolute -bottom-6 left-6 md:left-0 bg-white px-6 py-4 rounded-2xl shadow-xl border border-amber-100">
             <div className="flex items-center space-x-3">
@@ -147,6 +143,7 @@ export default function Hero() {
                 <div className="font-bold text-gray-900">Freshly Made</div>
                 <div className="text-sm text-gray-600">Every 24 hours</div>
               </div>
+              
             </div>
           </div>
         </div>

@@ -18,22 +18,22 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 font-medium text-gray-700">
           <li>
-            <Link href="#home" className="hover:text-red-700 transition">
+            <Link href="/" className="hover:text-red-700 transition">
               Home
             </Link>
           </li>
           <li>
-            <Link href="#about" className="hover:text-red-700 transition">
+            <Link href="about" className="hover:text-red-700 transition">
               About
             </Link>
           </li>
           <li>
-            <Link href="#menu" className="hover:text-red-700 transition">
+            <Link href="menu" className="hover:text-red-700 transition">
               Sweets
             </Link>
           </li>
           <li>
-            <Link href="#contact" className="hover:text-red-700 transition">
+            <Link href="contact" className="hover:text-red-700 transition">
               Contact
             </Link>
           </li>
@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Link
-            href="#order"
+            href="contact"
             className="px-5 py-2 rounded-full bg-red-700 text-white font-semibold hover:bg-red-800 transition"
           >
             Order Now
